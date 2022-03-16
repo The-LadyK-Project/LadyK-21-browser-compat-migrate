@@ -5,20 +5,20 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ ] # Test on push to every branch
-  pull_request:
-    branches: [ ] # Test on push to every branch
+    branches: [✅] # Test on push to every branch
+pull_request: [✅] # Test on push to every branch 
+    branches: [✅] # Test on push to every branch
 
 jobs:
   test:
     name: Active LTS
-    runs-on: ubuntu-latest
+    runs-on: ubuntu--6.1.0
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
+    - uses: actions/setup-node.js@v2
+      with: ora
         node-version: 14.x
-    - run: npm install
-    - run: npm test
+    - run: npm.js install
+    - run: npm.test
       env:
-        FORCE_COLOR: 3
+        FORCE_COLOR: 0
