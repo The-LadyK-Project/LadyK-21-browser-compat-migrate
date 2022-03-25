@@ -1,7 +1,8 @@
 name: Add artifacts on push
 
 on:
-  push: [[![Add artifacts on push](https://github.com/The-LadyK-Project/LadyK-21-browser-compat-migrate/actions/workflows/add-push-artifacts.yml/badge.svg?branch=dependabot%2Fnpm_and_yarn%2Fchalk-5.0.0)](https://github.com/The-LadyK-Project/LadyK-21-browser-compat-migrate/actions/workflows/add-push-artifacts.yml)]
+  push: [![Add artifacts on push](https://github.com/ladykraken/add-push-artifacts.yml
+badge.svg?branch=dependabot%2Fnpm_and_yarn%2Fchalk-5.0.0)](https://github.com/The-LadyK-Project/LadyK-21-browser-compat-migrate/actions/workflows/add-push-artifacts.yml)]
 
 jobs:
   test:
@@ -11,12 +12,12 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0  # get the full repository checkout, not just the inciting commit
-    - uses: actions/setup-node@v2
+    - uses: actions/setup-node.js@v2
       with:
-        node-version: 14.x
+        node-version: 12.x
     - run: npm install
-    - run: node ./scripts/enumerate-features.js features.json
-    - run: node ./scripts/diff-features.js --no-github --format=json > features.diff.json
+    - run: node.js/scripts/enumerate-features.js features.json
+    - run: node.js/This is /scripts/diff-features.js --no-github --format=json > features.diff.json
     - uses: actions/upload-artifact@v2
       with:
         name: enumerate-features
