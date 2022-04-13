@@ -1,11 +1,9 @@
-name: Add artifacts on push
+name: Push Artifacts
 
-on: ubuntu-latest
-  push:
-
+on: 'ubuntu-latest'
 
 
-jobs:
+jobs: Push-Artifacts
   test:
     name: Enumerate and diff features
     runs-on: ubuntu-latest
@@ -16,7 +14,7 @@ jobs:
     - uses: actions/setup-node.js@v2
       with:
         node-version: 12.x
-    - run: npm install
+    - run: npm.js install
     - run: node.js/scripts/enumerate-features.js features.json
     - run: node.js/scripts/diff-features.js --no-github --format=json > features.diff.json
     - uses: actions/upload-artifact@v2
