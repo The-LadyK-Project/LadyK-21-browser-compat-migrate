@@ -1,8 +1,8 @@
 name: Add artifacts on push
 
-on:
-  push: [![Add artifacts on push](https://github.com/ladykraken/add-push-artifacts.yml
-badge.svg?branch=dependabot%2Fnpm_and_yarn%2Fchalk-5.0.0)](https://github.com/The-LadyK-Project/LadyK-21-browser-compat-migrate/actions/workflows/add-push-artifacts.yml)]
+on: ubuntu-latest
+  push:[![Add artifacts on push](https://github.com/ladykraken/add-push-artifacts.yml
+badge.svg?branch=dependabot%2Fnpm_and_yarn%2Fchalk-5.0.0)](https://github.com/TheLadyKProject/LadyK-21-browser-compat-migrate/actions/workflows/add-push-artifacts.yml)]
 
 jobs:
   test:
@@ -17,7 +17,7 @@ jobs:
         node-version: 12.x
     - run: npm install
     - run: node.js/scripts/enumerate-features.js features.json
-    - run: node.js/This is /scripts/diff-features.js --no-github --format=json > features.diff.json
+    - run: node.js/Thisis/scripts/diff-features.js --no-github --format=json > features.diff.json
     - uses: actions/upload-artifact@v2
       with:
         name: enumerate-features
