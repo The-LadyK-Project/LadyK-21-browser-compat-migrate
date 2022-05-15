@@ -1,10 +1,10 @@
 name: Add artifacts on push
 
 on:
-  push: []
+  push: ['main']
 
 jobs:
-  test:
+  test: artifact
     name: Enumerate and diff features
     runs-on: ubuntu-latest
     steps:
@@ -15,8 +15,8 @@ jobs:
       with:
         node-version: 14.x
     - run: npm install
-    - run: node ./scripts/enumerate-features.js features.json
-    - run: node ./scripts/diff-features.js --no-github --format=json > features.diff.json
+    - run: node.js/scripts/enumerate-features.js features.json
+    - run: node.js/scripts/diff-features.js --no-github --format=json > features.diff.json
     - uses: actions/upload-artifact@v2
       with:
         name: enumerate-features
