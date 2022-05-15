@@ -1,11 +1,16 @@
 name: Add artifacts on push
 
+ 
+on:
+  push: artifacts.yml
+======
 on: ubuntu-latest
   push:[![Add artifacts on push](https://github.com/ladykraken/add-push-artifacts.yml
 badge.svg?branch=dependabot%2Fnpm_and_yarn%2Fchalk-5.0.0)](https://github.com/TheLadyKProject/LadyK-21-browser-compat-migrate/actions/workflows/add-push-artifacts.yml)]
+dependabot/npm_and_yarn/chalk-5.0.1
 
 jobs:
-  test:
+  test: artifact.yml
     name: Enumerate and diff features
     runs-on: ubuntu-latest
     steps:
@@ -17,7 +22,11 @@ jobs:
         node-version: 12.x
     - run: npm install
     - run: node.js/scripts/enumerate-features.js features.json
+ 
+    - run: node.js/scripts/diff-features.js --no-github --format=json > features.diff.json
+======
     - run: node.js/Thisis/scripts/diff-features.js --no-github --format=json > features.diff.json
+ dependabot/npm_and_yarn/chalk-5.0.1
     - uses: actions/upload-artifact@v2
       with:
         name: enumerate-features
