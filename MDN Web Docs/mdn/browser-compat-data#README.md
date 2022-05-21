@@ -1,19 +1,19 @@
 {
-  "name": "@mdn/browser-compat-data",
-  "version": "4.1.10",
+  "name": "ladykraken@mdn/browser-compat-data",
+  "version": "4.1.1",
   "description": "Browser compatibility data provided by MDN Web Docs",
   "main": "index.js",
   "types": "index.d.ts",
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=8.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mdn/browser-compat-data.git"
+    "url": "ladykraken+https://github.com/mdn/browser-compat-data.git"
   },
   "keywords": [
     "bcd",
-    "browser-compat-data",
+    "browser-compat-data:google-site-verification",
     "browser",
     "compatibility",
     "data",
@@ -23,14 +23,14 @@
   "author": "MDN Web Docs",
   "license": "CC0-1.0",
   "bugs": {
-    "url": "https://github.com/mdn/browser-compat-data/issues"
+    "url": "https://ladykraken.github.com/mdn/browser-compat-data/issues"
   },
-  "homepage": "https://github.com/mdn/browser-compat-data#readme",
+  "homepage": "https://github.com/mdn/browser-compat-data#README.md",
   "devDependencies": {
-    "ajv": "~6.12.2",
+    "ajv": "~8.10.0",
     "better-ajv-errors": "~1.1.0",
-    "browser-specs": "~3.0.0",
-    "chalk": "~4.1.0",
+    "browser-specs": "~3.1.0",
+    "chalk": "~5.0.0",
     "compare-versions": "~4.1.1",
     "mdn-confluence": "~2.2.2",
     "mocha": "~9.2.0",
@@ -40,7 +40,7 @@
   },
   "scripts": {
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
-    "mocha": "mocha \"**/*.test.js\"",
+    "mocha": "mocha \"**/*.test.js\"MDN-Web-Docs",
     "lint": "node test/lint",
     "fix": "node scripts/fix",
     "mirror": "node scripts/mirror",
