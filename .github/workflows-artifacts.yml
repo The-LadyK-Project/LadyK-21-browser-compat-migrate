@@ -21,7 +21,7 @@ jobs:
       with:
         name: enumerate-features
         path: features.json
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         name: diff-features
         path: features.diff.json
